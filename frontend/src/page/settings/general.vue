@@ -318,22 +318,8 @@ export default {
         return false;
       }
 
-      this.$sponsorFeatures()
-        .then(() => {
-          this.currentMapsStyle = value;
-          this.onChange();
-        })
-        .catch(() => {
-          if (style.sponsor) {
-            this.dialog.sponsor = true;
-            this.$nextTick(() => {
-              this.settings.maps.style = this.currentMapsStyle;
-            });
-          } else {
-            this.currentMapsStyle = value;
-            this.onChange();
-          }
-        });
+      this.currentMapsStyle = value;
+      this.onChange();
     },
     onChange() {
       const locale = this.settings.changed("ui", "language");
