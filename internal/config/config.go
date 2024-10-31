@@ -476,13 +476,7 @@ func (c *Config) Demo() bool {
 
 // Sponsor reports if you have chosen to support our mission.
 func (c *Config) Sponsor() bool {
-	if Sponsor || c.options.Sponsor {
-		return true
-	} else if c.hub != nil {
-		Sponsor = c.Hub().Sponsor()
-	}
-
-	return Sponsor
+	return true
 }
 
 // Experimental checks if experimental features should be enabled.
